@@ -92,3 +92,73 @@ def llenar_zoo():
 
 if name == "main":
     llenar_zoo
+[2/3, 7:54 p. m.] Mël: #Clase Jaula
+class Jaula:
+   def __init__(self,jaula,patio):
+      self.jaula = jaula
+      self.patio = patio
+# Clase Abstracta para TODO tipo de animal
+class Animal():
+
+   def __init__(self, cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia,jaula,patio):
+      self.cantidad           = cantidad
+      self.periodo_gestacion  = periodo_gestacion
+      self.nombre_cientifico  = nombre_cientifico
+      self.nombre_comun       = nombre_comun
+      self.region_procedencia = region_procedencia
+      self.jaula              = Jaula(jaula,patio)
+
+/// from animal import Animal
+
+class Ave(Animal):
+   def __init__(self, cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio, color_plumas):
+      super().__init__(cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio)
+      self.color_plumas = color_plumas
+   def mostrar(self):
+      print(f"Nombre:{self.nombre_comun}.")
+      print(f"Nombre Cientifico: {self.nombre_cientifico}.")
+      print(f"Color Plumaje: {self.color_plumas}.")
+      print(f"Jaula: '{self.jaula.jaula}' - Patio: {self.jaula.patio}.")
+      print(f"Procedencia: {self.region_procedencia}.")
+      print(f"Gestacion: {self.periodo_gestacion} meses.")
+[2/3, 7:55 p. m.] Mël: from animal import Animal
+
+class Mamifero(Animal):
+    def __init__(self, cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio, tipo_pelo):
+        super().__init__(cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio)
+        self.tipo_pelo = tipo_pelo
+    def mostrar(self):
+        print(f"Nombre:{self.nombre_comun}.")
+        print(f"Nombre Cientifico: {self.nombre_cientifico}.")
+        print(f"Tipo de Pelaje: {self.tipo_pelo}.")
+        print(f"Jaula: '{self.jaula.jaula}' - Patio: {self.jaula.patio}.")
+        print(f"Procedencia: {self.region_procedencia}.")
+        print(f"Gestacion: {self.periodo_gestacion} meses.")
+[2/3, 7:55 p. m.] Mël: from animal import Animal
+class Pez(Animal):
+   def __init__(self, cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio, cantidad_aletas):
+      super().__init__(cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio)
+      self.cantidad_aletas = cantidad_aletas
+   def mostrar(self):
+        print(f"Nombre:{self.nombre_comun}.")
+        print(f"Nombre Cientifico: {self.nombre_cientifico}.")
+        print(f"Cantidad de Aletas: {self.cantidad_aletas}.")
+        print(f"Jaula: '{self.jaula.jaula}' - Patio: {self.jaula.patio}.")
+        print(f"Procedencia: {self.region_procedencia}.")
+        print(f"Gestacion: {self.periodo_gestacion} meses.")
+[2/3, 7:55 p. m.] Mël: from animal import Animal
+
+class Reptil(Animal):
+   def __init__(self, cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio, venenoso):
+      super().__init__(cantidad, periodo_gestacion, nombre_cientifico, nombre_comun, region_procedencia, jaula, patio)
+      self.venenoso = venenoso
+   def mostrar(self):
+      if self.venenoso is True:
+         veneno = {"Si"}
+      else: veneno = {"No"}
+      print(f"Nombre:{self.nombre_comun}.")
+      print(f"Nombre Cientifico: {self.nombre_cientifico}.")
+      print(f"Venenoso: {veneno}.")
+      print(f"Jaula: '{self.jaula.jaula}' - Patio: {self.jaula.patio}.")
+      print(f"Procedencia: {self.region_procedencia}.")
+      print(f"Gestacion: {self.periodo_gestacion} meses.")
